@@ -1,25 +1,21 @@
 import React from 'react';
-import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
-import Homepage from './pages/homepage';
-import ProfessorPage from './pages/professorpage';
-import './App.css';
-import Admin from './pages/admin';
-import Report from './pages/report';
-import Student from './pages/student';
-// import FaceRecognition from './FaceRecognition';
+import { Route, Routes } from 'react-router-dom';
+import AdminDashboard from './pages/AdminDashboard';
+import Login from './pages/Login';
+import ProfessorDashboard from './pages/ProfessorDashboard';
+import ManageCourses from './pages/ManagePrograms';
+import ManagePrograms from './pages/ManageCourses';
 
 function App() {
   return (
-    <Router>
-      <Routes>
-        <Route exact path='/' element={<Homepage />} />
-        <Route path='/professor' element={<ProfessorPage />} />
-        <Route path='/admin' element={<Admin />} />
-        <Route path='/report' element={<Report />} />
-        <Route path='/student' element={<Student />} />
-        
-      </Routes>
-    </Router>
+    <Routes>
+      <Route path="/admin" element={<AdminDashboard />} />
+      <Route path="/professor" element={<ProfessorDashboard />} />
+      <Route path='/courses' element={<ManageCourses />} />
+      <Route path='/programs' element={<ManagePrograms />} />
+      <Route path="/login" element={<Login />} />
+      <Route path="/" element={<Login />} />
+    </Routes>
   );
 }
 
